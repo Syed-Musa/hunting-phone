@@ -1,21 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phone Hunter Website</title>
-</head>
-<body>
-  <header>
-    
-  </header>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--daisy-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <main>
+    <title>Phone Hunter Website</title>
+  </head>
+  <body>
+    <!--header section Start-->
+    <header>
+      <h1 class="font-bold text-5xl text-center">Mobiledokan</h1>
+    </header>
+    <!--header section End-->
 
-  </main>
+    <!--main section Start-->
+    <main class="container mx-auto mt-8">
+      <!--input handle search start-->
+      <section class="bg-gray-100 p-4 m-4">
+        <input type="text" name="" id="search-field" class="input input-bordered w-full max-w-xs" placeholder="Search....">
 
-  <footer>
+        <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+      </section>
+      <!--input handle search End-->
 
-  </footer>
-</body>
+      <!--loading start-->
+      <section>
+        <div id="loading-spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner text-primary loading-lg"></span>
+        </div>
+      </section>
+      <!--loading End-->
+
+      <!--handleShowALl start-->
+      <section>
+        <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        </div>
+
+        <!--show all button-->
+        <div id="show-all-container" class="hidden text-center my-8">
+          <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+        </div>
+        <!--show all button End-->
+      </section>
+      <!--handleShowAll End-->
+
+      <!--show details modal start-->
+      <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box">
+          <h3 id="show-detail-phone-name" class="font-bold text-3xl">Hello!</h3>
+          <div id="show-detail-container">
+          </div>
+          <div class="modal-action">
+            <button class="btn">Close</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <!--main section End-->
+
+    <footer></footer>
+
+    <script src="js/phone.js"></script>
+  </body>
 </html>
